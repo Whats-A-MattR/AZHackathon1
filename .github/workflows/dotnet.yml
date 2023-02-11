@@ -23,7 +23,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore --source ./Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
     - name: Build
       run: dotnet build --no-restore --source ./Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
     - name: Test
@@ -31,6 +31,8 @@ jobs:
 
 
 
-#The .csproj project file is located in ./Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
-#The .csproj test file is located in ./Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj
+#The .csproj project file is located in 
+#./Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
+#The .csproj test file is located in 
+#./Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj
 #
