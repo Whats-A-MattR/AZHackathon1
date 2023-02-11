@@ -6,7 +6,7 @@ name: .NET App Build
 env:
   registryName: mattrdevopsreg.azurecr.io
   repositoryName: wth/dotnetcoreapp
-  dockerFolderPath: Application/src/RazorPagesTextSample
+  dockerFolderPath: Application/src/RazorPagesTestSample
   tag: ${{ github.run_number }}
 
 on:
