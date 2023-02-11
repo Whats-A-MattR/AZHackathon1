@@ -20,6 +20,7 @@ using RazorPagesTestSample.Data;
 
 
 // deploy to the site now thanks
+// proper attribution matters
 
 namespace RazorPagesTestSample
 {
