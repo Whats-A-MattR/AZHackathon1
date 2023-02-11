@@ -7,7 +7,7 @@ env:
   registryName: mattrdevopsreg.azurecr.io
   repositoryName: wth/dotnetcoreapp
   dockerFolderPath: Application/src/RazorPagesTextSample
-  tag: ${{github.un_number}}
+  tag: ${{ github.run_number }}
 
 on:
   push:
