@@ -18,6 +18,9 @@ using RazorPagesTestSample.Data;
 // please 
 // please
 
+
+// deploy to the site now thanks
+
 namespace RazorPagesTestSample
 {
     public class Program
