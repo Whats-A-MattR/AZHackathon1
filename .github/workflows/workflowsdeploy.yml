@@ -32,7 +32,9 @@ jobs:
       - name: AzLogin
         uses: Azure/login@v1.4.6
         with:
-          creds: secrets.AZ_CREDENTIALS
+          credsentials: secrets.AZ_CREDENTIALS
+        env: 
+          credentials: secrets.AZ_CREDENTIALS
   #    - name: ARMDeploy
   #      uses: Azure/arm-deploy@v1.0.9
   #      with:
