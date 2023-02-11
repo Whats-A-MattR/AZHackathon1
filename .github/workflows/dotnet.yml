@@ -6,8 +6,10 @@ name: .NET
 on:
   push:
     branches: [ "main" ]
+    paths: ['Application/*']
   pull_request:
     branches: [ "main" ]
+    paths: ['Application/*']
 
 jobs:
   build:
@@ -23,6 +25,12 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore --source ./Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal --source ./Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj
+
+
+
+#The .csproj project file is located in ./Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
+#The .csproj test file is located in ./Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj
+#
