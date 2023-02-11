@@ -12,6 +12,8 @@ using RazorPagesTestSample.Data;
 // please work now
 // okay this should do it
 
+// docker push now?
+
 namespace RazorPagesTestSample
 {
     public class Program
