@@ -6,7 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RazorPagesTestSample.Data;
 
-// comment? 
+// comment
+// another comment
 
 namespace RazorPagesTestSample
 {
