@@ -44,4 +44,4 @@ jobs:
         with:
           resourceGroupName: ${{ secrets.AZ_RG_NAME }}
           template: "./ARM-Templates/container-webapp-template.json"
-          parameters: webAppName=mattr-${{ github.events.input.targetEnvironment }}
+          parameters: webAppName=mattr-${{ github.event.inputs.targetEnvironment }}
