@@ -13,6 +13,7 @@ using RazorPagesTestSample.Data;
 // okay this should do it
 
 // docker push now?
+// docker work now pelase
 
 namespace RazorPagesTestSample
 {
