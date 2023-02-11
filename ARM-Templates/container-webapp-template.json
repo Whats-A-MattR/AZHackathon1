@@ -3,11 +3,11 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-            "defaultValue": "russ-devops-dev",
+            "defaultValue": "mattrdevops-dev",
             "type": "String"
         },
         "hostingPlanName": {
-            "defaultValue": "russ-devops-asp",
+            "defaultValue": "mattrdevops-asp",
             "type": "String"
         },
         "appInsightsLocation": {
@@ -15,7 +15,7 @@
             "type": "String"
         },
         "appInsightsName": {
-            "defaultValue": "russ-devops-ai",
+            "defaultValue": "mattrdevops-ai",
             "type": "String"
         },        
         "sku": {
@@ -23,11 +23,11 @@
             "type": "String"
         },
         "registryName": {
-            "defaultValue": "russ-devopsreg",
+            "defaultValue": "mattrdevopsreg",
             "type": "String"
         },
         "imageName": {
-            "defaultValue": "russ-devopsimage",
+            "defaultValue": "mattrdevopsimage",
             "type":"String"
         },
         "registryLocation": {
