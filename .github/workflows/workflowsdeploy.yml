@@ -6,6 +6,11 @@ name: Deploy to AzureHackathon
 # or API.
 on:
   workflow_dispatch:
+    inputs:
+      targetEnvironment:
+        description: "suffix for webapp resource"
+        required: true
+        default: "test"
     # Inputs the workflow accepts.
     #inputs:
     #  name:
@@ -36,7 +41,7 @@ jobs:
 
       - name: Deploy Azure Resource Manager (ARM) Template
         uses: Azure/arm-deploy@v1
-        with: 
+        with:
           resourceGroupName: ${{ secrets.AZ_RG_NAME }}
-          template: './ARM-Templates/container-webapp-template.json'
-          parameters: webAppName=mattr-${{vars.TARGETENV}}
+          template: "./ARM-Templates/container-webapp-template.json"
+          parameters: webAppName=mattr-${{ targetEnvironment }}
