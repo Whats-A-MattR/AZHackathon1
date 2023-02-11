@@ -24,6 +24,7 @@ using RazorPagesTestSample.Data;
 
 //now?
 // wrong thing bro
+// this looks better
 
 namespace RazorPagesTestSample
 {
