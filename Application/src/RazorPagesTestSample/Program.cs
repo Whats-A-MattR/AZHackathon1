@@ -23,6 +23,7 @@ using RazorPagesTestSample.Data;
 // proper attribution matters
 
 //now?
+// wrong thing bro
 
 namespace RazorPagesTestSample
 {
