@@ -3,6 +3,12 @@
 
 name: .NET App Build
 
+env:
+  registryName: mattrdevopsreg.azurecr.io
+  repositoryName: wth/dotnetcoreapp
+  dockerFolderPath: Application/src/RazorPagesTextSample
+  tag: ${{github.un_number}}
+
 on:
   push:
     branches: [ "main" ]
@@ -29,6 +35,23 @@ jobs:
       #Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
     - name: Test
       run: dotnet test --no-build --verbosity normal ./Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj
+
+  docker-build-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Docker Logon
+        uses: docker/login-action@v2.1.0
+        with:
+          registry: ${{ env.registryName }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+        
+      - name: Docker Build
+        run: docker built -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
+
+      - name: Docker Push
+        run: docker push $registryName/$repositoryName:$tag
 
 
 
