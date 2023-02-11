@@ -38,5 +38,4 @@ jobs:
 #    - name: ARMDeploy
 #      uses: Azure/arm-deploy@v1.0.9
 #      with:
-        
-    
+
