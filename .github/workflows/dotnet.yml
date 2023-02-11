@@ -76,6 +76,52 @@ jobs:
       - name: Azure Logout
         run: az logout
 
+  deploy-on-test:
+    runs-on: ubuntu-latest
+    needs: [docker-build-push, deploy-on-dev]
+    environment: 
+      name: test
+      url: https://mattr-test.azurewebsites.net
+    steps:
+      - name: Checking Out
+        uses: actions/checkout@v3
+
+      - name: AzLogin
+        uses: Azure/login@v1.4.6
+        with:
+          creds: ${{ secrets.AZ_CREDENTIALS }}
+
+      - name: Azure WebApp Deploy on $environment
+        uses: azure/webapps-deploy@v2
+        with: 
+          app-name: mattr-test
+          images: ${{env.registryName}}/${{env.repositoryName}}:${{env.tag}}
+      - name: Azure Logout
+        run: az logout
+
+  deploy-on-prod:
+    runs-on: ubuntu-latest
+    needs: [docker-build-push, deploy-on-test]
+    environment: 
+      name: prod
+      url: https://mattr-prod.azurewebsites.net
+    steps:
+      - name: Checking Out
+        uses: actions/checkout@v3
+
+      - name: AzLogin
+        uses: Azure/login@v1.4.6
+        with:
+          creds: ${{ secrets.AZ_CREDENTIALS }}
+
+      - name: Azure WebApp Deploy on $environment
+        uses: azure/webapps-deploy@v2
+        with: 
+          app-name: mattr-prod
+          images: ${{env.registryName}}/${{env.repositoryName}}:${{env.tag}}
+      - name: Azure Logout
+        run: az logout
+
 
 #The .csproj project file is located in 
 #./Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
